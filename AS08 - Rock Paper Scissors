@@ -1,0 +1,27 @@
+import random
+
+com = ["Rock", "Paper", "Scissors"]
+
+computer = random.choice(com)
+
+player = input("Rock, Paper, Scissors?  Answer with capital letter for the first letter")
+
+
+print("computer chooses",computer)
+if player == computer:
+    print("Tie!")
+if player == "Rock":
+    if computer == "Paper":
+        print("You lose!")
+    if computer == "Scissors":
+        print("you win")
+if player == "Paper":
+    if computer == "Scissors":
+        print("You lose!")
+    if computer == "Rock":
+        print("you win")
+if player == "Scissors":
+    if computer == "Rock":
+        print("You lose!")
+    if computer == "Paper":
+        print("you win")
