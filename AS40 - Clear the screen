@@ -1,0 +1,4 @@
+def clear_screen(lines):
+  for i in range(lines):
+    print (' ')
+clear_screen(100) 
