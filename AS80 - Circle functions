@@ -1,0 +1,20 @@
+import math
+
+def calculate_area(radius):
+    if radius < 0:
+        return "Radius cannot be negative"
+    else:
+        return math.pi * (radius ** 2)
+
+def calculate_circumference(radius):
+  if radius < 0:
+    return "Radius cannot be negative"
+  else:
+    return 2 * math.pi * radius
+
+radius = 9.4
+area = calculate_area(radius)
+circumference = calculate_circumference(radius)
+
+print("Area of the circle with radius" , radius , "is" , area , "cm2")
+print("Circumference of the circle with radius" , radius , "is" , circumference , "cm2")
