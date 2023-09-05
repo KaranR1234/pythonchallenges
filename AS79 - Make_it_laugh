@@ -1,0 +1,14 @@
+def make_it_laugh(input_string):
+    vowels = "AEIOU" and "aeiou"
+    modified_string = ""
+    
+    for char in input_string:
+        if char in vowels:
+            modified_string += "haha"
+        else:
+            modified_string += char
+    
+    print(modified_string)
+
+input_string = "The quick brown fox jumps over a lazy dog"
+make_it_laugh(input_string)
