@@ -1,0 +1,10 @@
+MyVariable = 'HelloWorld12345'
+
+print(MyVariable[0:5])  
+print(MyVariable[5:])   
+print(MyVariable[:5])   
+print(MyVariable[::2])  
+
+print(MyVariable[::-1])  
+print(MyVariable[-5:])   
+print(MyVariable[:-5])   
