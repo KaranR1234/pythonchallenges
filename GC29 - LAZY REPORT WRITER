@@ -1,0 +1,9 @@
+import random
+import time
+
+name = int(input("how many students"))
+comments = ['well done, all correct', 'some mistakes. please do all corrections', 'most answers are correct but unacceptable writing', 'need more focus in your work', 'unacceptable all wrong', 'good job, excellant work done']
+
+
+for i in range (name):
+    print(random.choice(comments))
