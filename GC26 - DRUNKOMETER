@@ -1,0 +1,11 @@
+print("pls retype this phrase: i am very okay:")
+
+a = input()
+
+if a == "i am very okay":
+    print("repeat the phrase one more time:")
+    b = input()
+    if b == "i am very okay":
+        print("you are not drunk")
+else:
+    print("you are very very drunk")
