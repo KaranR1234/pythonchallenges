@@ -1,0 +1,18 @@
+import random
+guess = int(input("choose a number from 1-100"))
+computer = random.randint(0,100)
+
+if guess>100:
+    print("your number is non valid")
+
+if guess<0:
+    print("your number is non valid")
+
+print("the computer guess is")
+print(computer)
+
+if computer<guess:
+    print("your number is higher")
+
+if computer>guess:
+    print("your number is lower")
