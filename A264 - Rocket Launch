@@ -1,0 +1,10 @@
+import math
+
+mass = int(input("whats the mass(kg)"))
+radius = int(input("whats the radius(m)"))
+
+g = (6.673*(10**-11))
+
+calc = math.sqrt(2*g*mass/radius)
+
+print(calc)
