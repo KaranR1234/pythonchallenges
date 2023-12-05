@@ -1,0 +1,65 @@
+front_of_queue_pointer = 0
+end_of_queue_pointer = 3
+queue    = ["Frog", "Cat", "Fish", "Elk", "", "", "", ""]  
+
+def print_queue():
+    """
+    Prints the current state of the queue
+    :return:
+    """
+    for i in range(8):
+        if i == front_of_queue_pointer and i == end_of_queue_pointer:
+            print("front & end queue pointers -> ", end="")
+        elif i == front_of_queue_pointer:
+            print("front queue pointer        -> ", end="")
+        elif i == end_of_queue_pointer:
+            print("end queue pointer          -> ", end="")
+        else:
+            print(" " * 30, end="")
+
+        print(i, "|", queue[i])
+
+def enqueue(item):
+    """
+    This adds an item to the queue
+    :param item: The item you want to add
+    :return:
+    """
+    global front_of_queue_pointer
+    global end_of_queue_pointer
+    global queue
+
+    if (end_of_queue_pointer + 1) % 8 == front_of_queue_pointer:
+        print("Queue is full")
+    else:
+        queue[end_of_queue_pointer] = item
+        end_of_queue_pointer = (end_of_queue_pointer + 1) % 8
+        print("Inserting", item)
+        print("Moving end of queue pointer to", end_of_queue_pointer)
+
+def dequeue():
+    """
+    This removes the item from the queue and gives it back to you.
+    :return: the item at the front of the queue
+    """
+    global front_of_queue_pointer
+    global end_of_queue_pointer
+    global queue
+
+    if end_of_queue_pointer == front_of_queue_pointer:
+        item_from_queue = queue[front_of_queue_pointer]
+        queue[front_of_queue_pointer] = ""
+        front_of_queue_pointer = 0
+        end_of_queue_pointer = -1
+    elif end_of_queue_pointer == -1:
+        print("Empty")
+    else:
+        item_from_queue = queue[front_of_queue_pointer]
+        queue[front_of_queue_pointer] = ""
+        front_of_queue_pointer = (front_of_queue_pointer + 1) % 8
+        return item_from_queue
+
+print("Welcome to your very own queue")
+print("You can use print_queue(), enqueue(item), and dequeue() to use the circular queue.")
+print("The list is pretending to be a fixed-sized array, although it's not fussy about data types.")
+print("You can even ask for help using e.g. help(print_queue)")
