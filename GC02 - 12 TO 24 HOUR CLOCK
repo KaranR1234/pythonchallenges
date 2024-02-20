@@ -1,0 +1,8 @@
+x = int(input())
+y = input("am or pm")
+
+if y == "am":
+    print(x)
+
+if y == "pm":
+    print(x+12)
