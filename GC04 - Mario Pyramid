@@ -1,0 +1,7 @@
+# Write your code here :-)
+pyramid = int(input())
+letter = "x"
+number = 2
+for i in range (pyramid):
+    print(letter)
+    letter = (letter*number)
