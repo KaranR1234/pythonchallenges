@@ -1,0 +1,70 @@
+import random
+import arrays
+global Alive
+
+
+Score = 0
+
+
+def GenerateQuestion(Questions):
+  Index = random.choice(range(0, len(Questions)))
+  print(Questions[Index])
+  #print("Index: ", Index)
+  return Index
+
+def GenerateOptions(Answers, Index):
+  Options: list[str] = []
+  Options.append(Answers[Index])
+  while len(Options) != 4:
+    AnswerNumber = random.randint(0, len(Answers))
+    WrongAnswer = Answers[AnswerNumber-1]
+    if WrongAnswer != Answers[Index]:
+      Options.append(WrongAnswer)
+    random.shuffle(Options)
+  print('0. ', Options[0])
+  print('1. ', Options[1])
+  print('2. ', Options[2])
+  print('3. ', Options[3])
+  return Options
+
+
+def CheckAnswer(UserInput, Answers, Index, Alive, Options):
+  global Score
+  if Options[UserInput] == Answers[Index]:
+    print("Correct")
+    Score += 100
+    print(f"Your score: {Score}")
+  else:
+    print("incorrect")
+    Alive = False
+  return Alive
+
+highest = open('Highscore.txt','r') 
+change = open('Highscore.txt','a') 
+delete = open('Highscore.txt','w')
+
+#Highscore = int(highest.readline())
+#print("HIghscore: ", Highscore)
+def Main():
+  Alive = True
+  while Alive:
+    Index: int = GenerateQuestion(arrays.Questions)
+    Options = GenerateOptions(arrays.Answers,Index)
+    UserInput = int(input('Enter your answer'))
+    Alive = CheckAnswer(UserInput, arrays.Answers, Index, Alive, Options)
+  print('Final Score: ', Score)
+  #if Score > int(highest.read()):
+  print('New Highscore!')
+  change.write('\n', str(Score))
+  
+    
+  
+  
+def reset():
+  delete = open('Highscore.txt','w')
+  delete.write('1')
+  delete.close()
+#reset()
+
+
+#Main()
