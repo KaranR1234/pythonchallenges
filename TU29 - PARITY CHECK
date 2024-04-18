@@ -1,0 +1,13 @@
+import random
+a = ["00100111", "01101111",]
+print(random.choice(a))
+
+count = 0
+my_byte = input("odd or even:")
+for i in a:
+    if i =="1": count = count +1
+print(count)
+
+if count%2 == 1: print("odd")
+else:
+    print("even numbers of 1s, Parity Bit 1")
