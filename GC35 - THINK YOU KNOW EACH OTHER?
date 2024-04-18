@@ -1,0 +1,19 @@
+print("first user asks a question and second user answers to see if he knows him/her")
+score = 0
+p = int(input("how many questions do you want to ask?"))
+
+for i in range(p):
+    print("____________________________________")
+    a = input("what is your question about yourself (cant be a number)")
+    d = input("what is your answer(cant be a number)")
+    print("second users turn")
+    e = input(a)
+
+    if e == d:
+        print("correct")
+        score = score + 1
+    else:
+        print("wrong")
+
+
+print("score is:", score)
