@@ -1,0 +1,12 @@
+MyMathHW = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+print (MyMathHW)
+print("the sum of my math hw is")
+print(sum(MyMathHW))
+print("the min of my list is")
+print (min(MyMathHW))
+print("the max of my list is")
+print (max(MyMathHW))
+print("the length of my list is")
+print (len(MyMathHW))
+print("the average of my list is")
+print(sum(MyMathHW)/len(MyMathHW))
